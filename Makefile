@@ -1,39 +1,46 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jesrodri <jesrodri@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/11/09 14:25:55 by jesrodri          #+#    #+#              #
+#    Updated: 2026/11/09 14:43:21 by jesrodri         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
-SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
-ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c \
-ft_memchr.c ft_memcmp.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
-ft_strjoin.c ft_strtrim.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
-ft_putstr_fd.c \
+CC = cc
+CFLAGS = -Wall -Werror -Wextra
 
-OBJS = $(SRCS:.c=.o)
-COMP = cc
-FLAGS = -Wall -Wextra -Werror
-AR = ar rcs
-RM = rm -f
+SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
+ft_isdigit.c ft_isprint.c ft_itoa.c ft_lstadd_back.c ft_lstadd_front.c \
+ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c \
+ft_lstsize.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c \
+ft_putchr_fd.c ft_putendl.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c \
+ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
+ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
+ft_tolower.c ft_toupper.c
 
-# Compilation rules -----------------------------
-# Compile each .c file into a .o file
-%.o: %.c
-	$(COMP) $(FLAGS) -c $<
+OBJS = $(SRCS:.c=.c)
 
-# Archive all object files into the static library
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $^
-
-# Targets --------------------------
-# Builds the library
+# *****************  COMPILATION RULES  *****************
+# PRINCIPAL RULES
 all: $(NAME)
 
-# Removes object files(.o)
+$(NAME): $(OBJS)
+	ar rcs $@ $^
+# INDIVIDUAL COMPILATION RULE
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
+# ********************  CLEAN RULES  ********************
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJS)
 
-#Removes object files(.o) and the library(.a)
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
-# Remove .o, .a and rebuilds
 re: fclean all
 
 .PHONY: all clean fclean re
