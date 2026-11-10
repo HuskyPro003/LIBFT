@@ -6,7 +6,7 @@
 /*   By: jesrodri <jesrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 12:03:05 by jesrodri          #+#    #+#             */
-/*   Updated: 2026/11/05 11:54:17 by jesrodri         ###   ########.fr       */
+/*   Updated: 2026/11/10 15:44:27 by jesrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static char	**fill(char **res, char const *s, char c)
 		if (*s != c)
 		{
 			len = word_len(s, c);
-			res[x] + ft_substr(s, 0, len);
+			res[x] = ft_substr(s, 0, len);
 			if (!res[x])
 			{
 				free_all(res, x);
