@@ -6,7 +6,7 @@
 /*   By: jesrodri <jesrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 19:25:17 by jesrodri          #+#    #+#             */
-/*   Updated: 2026/11/05 11:26:59 by jesrodri         ###   ########.fr       */
+/*   Updated: 2026/11/12 13:59:25 by jesrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_atoi(const char *nptr)
 			sig *= -1;
 		x++;
 	}
-	while (nptr[x])
+	while (nptr[x] >= '0' && nptr[x] <= '9')
 	{
 		res = res * 10 + (nptr[x] - '0');
 		x++;

@@ -6,7 +6,7 @@
 /*   By: jesrodri <jesrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 10:45:12 by jesrodri          #+#    #+#             */
-/*   Updated: 2026/10/28 11:21:06 by jesrodri         ###   ########.fr       */
+/*   Updated: 2026/11/12 14:21:08 by jesrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*s;
 	size_t				x;
 
+	if (!dest && !src)
+		return (NULL);
+	if (n == 0)
+		return (dest);
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
 	x = 0;
@@ -28,15 +32,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-/*
-int	main(void)
-{
-	char	origen[] = "hola";
-	char	destino[5] = "xxxx";
-
-	ft_memcpy(destino, origen, 2);
-	printf("%s\n", destino);
-	return(0);
-}
-*/
