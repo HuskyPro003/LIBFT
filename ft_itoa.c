@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jesrodri <jesrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: huskypro003 <huskypro003@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 13:52:25 by jesrodri          #+#    #+#             */
-/*   Updated: 2026/11/06 13:35:35 by jesrodri         ###   ########.fr       */
+/*   Updated: 2026/11/18 13:53:24 by huskypro003      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,17 @@ char	*ft_itoa(int n)
 		nbr = nbr / 10;
 	}
 	return (str);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static void	test(int n, const char *esperado)
+{
+	char	*r;
+
+	r = ft_itoa(n);
+	if (r && ft_strncmp(r, esperado) == 0)
+		printf()
 }

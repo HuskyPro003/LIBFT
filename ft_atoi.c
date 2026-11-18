@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jesrodri <jesrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: huskypro003 <huskypro003@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 19:25:17 by jesrodri          #+#    #+#             */
-/*   Updated: 2026/11/12 13:59:25 by jesrodri         ###   ########.fr       */
+/*   Updated: 2026/11/18 11:28:20 by huskypro003      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,12 @@ int	ft_atoi(const char *nptr)
 	}
 	return (res * sig);
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	char	a[] = "-4";
+	printf("%i\n", ft_atoi(a));
+	return (0);
+}
+*/

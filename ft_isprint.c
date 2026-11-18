@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jesrodri <jesrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: huskypro003 <huskypro003@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 15:44:50 by jesrodri          #+#    #+#             */
-/*   Updated: 2026/11/09 11:54:33 by jesrodri         ###   ########.fr       */
+/*   Updated: 2026/11/18 13:19:56 by huskypro003      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,12 @@ int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }
+
+/*
+#include<stdio.h>
+int	main(void)
+{
+	printf("%i\n", ft_isprint('\0'));
+	return (0);
+}
+*/
